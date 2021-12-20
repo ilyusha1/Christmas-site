@@ -1,0 +1,50 @@
+<!-- <?php
+
+//ФОРМИРОВАНИЕ ДАННЫХ О ПОЛЬЗОВАТЕЛЕ
+date_default_timezone_set('Europe/Moscow');
+$time = date('m/d/Y h:i:s a', time());
+if(isset($_SERVER['HTTP_REFERER'])) {
+  $of = $_SERVER["HTTP_REFERER"];    
+} else {
+    $of = "Напрямую";
+}
+$ip = $_SERVER['REMOTE_ADDR'];
+$host =  $_SERVER['HTTP_HOST'];
+$visit = 1;
+//SQL ПОДКЛЮЧЕНИЕ К БД
+$dsn = 'mysql:host=localhost; dbname=easter'; //изменить dbname
+$pdo = new PDO($dsn, 'root', 'robokop67');//изменить пароль
+
+//SQL ПРОВЕРКА НА СУЩЕСТВОВАНИЕ IP В КУКИ. СЧИТАЕТ СКОЛЬКО ПОЛЬЗОВАТЕЛЬ ЗАХОДИЛ ТУДА СЮДА
+
+$first_or_second = 0;
+if (!isset($_COOKIE['ip'])) {
+    setcookie("visit", $visit, time() + 604800);
+    setcookie("ip", $ip, time() + 604800);
+    $first_or_second = 1;
+};
+
+$stmt = $pdo->prepare('SELECT ip, visit FROM statistic WHERE ip = :ip'); 
+if ($first_or_second == 1) { //Если только создался
+    $stmt->execute(array('ip' => $ip));
+} elseif ($first_or_second == 0) { //Если есть в куки
+    $stmt->execute(array('ip' => $_COOKIE['ip']));
+};
+
+$row = $stmt->fetch();
+
+if ($row['ip'] == "") {
+    $sql = 'INSERT INTO statistic(host, ip, of, date, visit) VALUES(:host, :ip, :of, :date, :visit)';
+    $query = $pdo->prepare($sql);
+    $query->execute(['host' => $host, 'ip' => $ip, 'of' => $of, 'date' => $time, 'visit' => $visit]);
+};
+
+if ($row['ip'] != "") {
+    $visit = $row['visit'];
+    $visit += 1;
+    $sql = "UPDATE statistic SET visit=:visit, date=:date WHERE ip=:ip";
+    $query = $pdo->prepare($sql);
+    $query->execute(['visit' => $visit, 'date' => $time, 'ip' => $row['ip']]);
+}
+
+?> -->

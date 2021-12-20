@@ -1,33 +1,27 @@
 "use strict"
 
-//Появление карты
 
 document.addEventListener('readystatechange', () => {
 
   if (document.readyState == "complete") {
     document.querySelector(".loader").style.opacity = "0"
-    document.querySelector('.header__dialog-one').style.transform = "translate(0%, 0%)"
-    document.querySelector('.header__dialog-two').style.transform = "translate(0%, 0%)"
-  }
 
-  setTimeout(() => {
-    document.querySelector(".loader").style.display = "none";
-  }, 600)
+    setTimeout(() => {
+      document.querySelector(".loader").style.display = "none";
+    }, 600)
+  }
 
 })
 
-    // document.querySelector('.header__dialog-one').style.transform = "translate(0%, 0%)"
-    // document.querySelector('.header__dialog-two').style.transform = "translate(0%, 0%)"
+//Появление карты
 
 function mapsOn() {
   document.querySelector('.iframes').src = "https://www.google.com/maps/d/u/3/embed?mid=1KSy3RZsEJleAFM3IrftwP4SCmUbraZoB"
   document.querySelector('.map').classList.add('map_active')
-  //document.querySelector('.iframes').src = ""
 }
 
 function mapsOff() {
   document.querySelector('.map').classList.remove('map_active')
-  //document.querySelector('.iframes').src = ""
 }
 
 
@@ -90,21 +84,6 @@ if (freedom == true) { //Если процесс перехода не заня�
       document.getElementById(`${secondCheckDot}`).classList.add('active-page') // Добавляю активный класс к странице, у который совпадает id с нажимаемым дотом
     }, timeForScroll)
   }
-
-  //Стили на страницах. Разные анимации
-  if (secondCheckDot == 1) {
-    document.querySelector('.header__dialog-one').style.transform = "translate(0%, 0%)"
-    document.querySelector('.header__dialog-two').style.transform = "translate(0%, 0%)"
-  } else if (secondCheckDot != 1) {
-    document.querySelector('.header__dialog-one').style.transform = "translate(-100%, 0%)"
-    document.querySelector('.header__dialog-two').style.transform = "translate(100%, 0%)"
-  }
-
-  // if (secondCheckDot == 2) {
-  //   document.querySelector('.bible__img').style.transform = "translate(0%, 0%)"
-  // } else if (secondCheckDot != 2) {
-  //   document.querySelector('.bible__img').style.transform = "translate(100%, 0%)"
-  // }
 }
 
 // Работа с тач скрином
