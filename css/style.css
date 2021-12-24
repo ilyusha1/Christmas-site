@@ -91,15 +91,20 @@ body {
 }
 
 .subtitle {
-  font-family: "Manrope";
-  font-size: 20px;
-  font-weight: 400;
-  color: black;
+  font-family: "TTCommons-DemiBold";
+  font-size: 27px;
+  color: white;
 }
 
 .slogan {
   font-family: "TTCommons-Regular";
   font-size: 22px;
+  color: white;
+}
+
+.text {
+  font-family: "TTCommons-Regular";
+  font-size: 20px;
   color: white;
 }
 
@@ -155,7 +160,7 @@ body {
   will-change: clip-path;
 }
 
-.about {
+/* .about {
   display: block;
   position: absolute;
   top: 0;
@@ -169,7 +174,7 @@ body {
   transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
   transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1), -webkit-clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
   will-change: clip-path;
-}
+} */
 
 .jesus {
   display: block;
@@ -375,7 +380,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow: scroll;
     width: 100%;
     height: 100%;
     -webkit-clip-path: inset(0% 0% 0% 100%);
@@ -386,9 +391,46 @@ body {
     will-change: clip-path;
   }
 
-  .about__intro {
-    margin-top: 70px;
+  .about .container {
+    height: auto;
   }
+
+  .about__intro {
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    margin-bottom: 105px;
+  }
+
+  .about__intro .title {
+    margin-bottom: 30px;
+  }
+
+  .about__content {
+    height: auto;
+    width: 100%;
+  }
+
+  .text-content {
+    margin-bottom: 35px;
+  }
+
+  .text-content:last-child {
+    margin-bottom: 0px;
+  }
+
+  .text-content .subtitle {
+    margin-bottom: 13px;
+  }
+
+  .text-content .text {
+    margin-bottom: 5px;
+  }
+
+  .text-content .text:last-child {
+    margin-bottom: 0;
+  }
+  
   
   .jesus {
     display: block;
@@ -451,11 +493,13 @@ body {
     width: 100%;
     height: 65px;
     z-index: 100;
+    background-color: #137167;
   }
   .dot .dot__item {
     background: transparent;
     margin: 0 7px;
     width: 13px;
+    min-width: 13px;
     height: 13px;
     border-radius: 100%;
     border: 2px solid rgb(255, 255, 255);
@@ -464,33 +508,26 @@ body {
     display: none;
   }
   .dot .dot__item_active {
-    width: 15px;
+    min-width: 15px;
     height: 15px;
     border-radius: 100%;
     border: 0px solid rgb(255, 255, 255);
     background: rgb(255, 255, 255);
   }
+
 }
 @media only screen and (max-width: 480px) {
-  .title {
+  .title {}
 
-  }
-
-  .subtitle {
-    font-size: 19px;
-  }
 }
 @media only screen and (max-width: 370px) {
   .mn-burger .mn-burger__button {
     top: 40px;
     left: 30px;
   }
+
   .title {
  
-  }
-
-  .subtitle {
-    font-size: 16px;
   }
 }
 @media only screen and (max-width: 320px) {}
