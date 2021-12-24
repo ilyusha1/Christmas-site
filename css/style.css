@@ -406,11 +406,6 @@ body {
     margin-bottom: 30px;
   }
 
-  .about__content {
-    height: auto;
-    width: 100%;
-  }
-
   .text-content {
     margin-bottom: 35px;
   }
@@ -432,14 +427,14 @@ body {
   }
   
   
-  .jesus {
+  .xmas-kids {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #E3D9C6;
+    background: #137167;
     overflow: hidden;
     -webkit-clip-path: inset(0% 0% 0% 100%);
             clip-path: inset(0% 0% 0% 100%);
@@ -447,6 +442,56 @@ body {
     transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
     transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1), -webkit-clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
     will-change: clip-path;
+  }
+
+  .xmas-kids__intro {
+    margin-top: 100px;
+    height: auto;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .xmas-kids__intro .title {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-table {
+    margin-bottom: 30px;
+  }
+
+  .contact-table__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 25px;
+    position: relative;
+  }
+
+  .contact-table__item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0px 25px;
+  }
+
+  .contact-table__item span {
+    font-family: "TTCommons-DemiBold";
+  }
+
+  .caption {
+    font-family: "TTCommons-Bold";
+    padding: 7px 15px;
+    background-color: #47BD6F;
+    border-radius: 20px;
+    width: fit-content;
+    color: white;
+    margin: 0 auto;
   }
 
   .trust {
