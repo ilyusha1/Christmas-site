@@ -75,8 +75,6 @@ if ($row['ip'] != "") {
 </head>
 <body>
 
-<div class="loader"></div>
-
 <div class="mn-burger">
     <div class="mn-burger__button">
         <div class="mn-burger__container">
@@ -90,7 +88,7 @@ if ($row['ip'] != "") {
 
 <div class="alert-height title padding-all">Пожалуйста, переверните телефон для корректной работы сайта</div>
 
-<main class="header active-page" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
+<main class="header" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
 
     <div class="container">
         <div class="header__intro flex-column">
@@ -106,7 +104,7 @@ if ($row['ip'] != "") {
                     <img src="img/nursery.webp"type="image/webp">
                 </picture>
             </div>
-            <button type="button" class="header__btn btn">Когда праздник</button>   
+            <button type="button" class="header__btn btn btn-red">Когда праздник</button>   
         </div>
     </div>
 
@@ -182,7 +180,7 @@ if ($row['ip'] != "") {
                     <br>
                     «Он, будучи образом Божиим, не почитал хищением быть равным Богу; 
                     но уничижил Себя Самого, приняв образ раба, сделавшись подобным 
-                    человекам и по виду став как человек.»
+                    человекам и по виду став как человек.»
                     <br> Филиппийцам 2:6-7
                 </p>
             </div>
@@ -321,12 +319,12 @@ if ($row['ip'] != "") {
                 <br>
                 <br>                
                 По всем вопросам звонить:<br>Олег Бондаренко:  +7 988 248-30-10.
-            </p>        
+            </p>
+            <!-- <a class="btn btn-green" href="tel:+79882483010">Позвонить</a>
+            <a class="btn btn-green" href="whatsapp://send/?phone=+79882483010">Написать whatsapp</a> -->
         </div>
     </div>
 </main>
 
-    <!-- JS -->
-	<script src="js/common.js"></script>
 </body>
 </html>
