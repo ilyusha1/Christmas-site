@@ -1,150 +1,25 @@
 "use strict"
 
-
-document.addEventListener('readystatechange', () => {
-
-  if (document.readyState == "complete") {
-    document.querySelector(".loader").style.opacity = "0"
-
-    setTimeout(() => {
-      document.querySelector(".loader").style.display = "none";
-    }, 600)
-  }
-
-})
-
-//Появление карты
-
-function mapsOn() {
-  document.querySelector('.iframes').src = "https://www.google.com/maps/d/u/3/embed?mid=1KSy3RZsEJleAFM3IrftwP4SCmUbraZoB"
-  document.querySelector('.map').classList.add('map_active')
+//Функция для Появление
+function addClasses(element, newClass) {
+  document.querySelector(`${element}`).classList.add(`${newClass}`);
 }
 
-function mapsOff() {
-  document.querySelector('.map').classList.remove('map_active')
+function removeClasses(element, newClass) {
+  document.querySelector(`${element}`).classList.remove(`${newClass}`);
 }
 
-
-//Функция анимации скролла
-let timeForScroll = 470; //Эта переменная отвечает за скорость перехода. Достаточно поменять значеие
-let nextActivePg;
-function scroll(nextPage) {
-  if (rightLeft == false) { //Скролл вправо
-    document.getElementById(`${activePage}`).style.clipPath = 'inset(0% 100% 0% 0%)'
-    document.getElementById(`${nextPage}`).style.clipPath = 'inset(0% 0% 0% 100%)'
-    //Кроссбраузерность для айфонов WEBKIT
-    document.getElementById(`${activePage}`).style.WebkitClipPath = 'inset(0% 100% 0% 0%)'
-    document.getElementById(`${nextPage}`).style.WebkitClipPath = 'inset(0% 0% 0% 100%)'
-    //Кроссбраузерность для оперы вроде O WEBKIT
-    document.getElementById(`${activePage}`).style.OClipPath = 'inset(0% 100% 0% 0%)'
-    document.getElementById(`${nextPage}`).style.OClipPath = 'inset(0% 0% 0% 100%)'
-  } else if (rightLeft == true) { //Скролл влево
-    document.getElementById(`${activePage}`).style.clipPath = 'inset(0% 0% 0% 100%)'
-    document.getElementById(`${nextPage}`).style.clipPath = 'inset(0% 100% 0% 0%)'
-    //Кроссбраузерность для айфонов WEBKIT
-    document.getElementById(`${activePage}`).style.WebkitClipPath = 'inset(0% 0% 0% 100%)'
-    document.getElementById(`${nextPage}`).style.WebkitClipPath = 'inset(0% 100% 0% 0%)'
-    //Кроссбраузерность для оперы вроде O WEBKIT
-    document.getElementById(`${activePage}`).style.OClipPath = 'inset(0% 0% 0% 100%)'
-    document.getElementById(`${nextPage}`).style.OClipPath = 'inset(0% 100% 0% 0%)'
+//Обработчик отслеживает скролл
+document.addEventListener('scroll', () => {
+  let scrollTop = document.documentElement.scrollTop;
+  console.log(scrollTop)
+  if(scrollTop > 100) {
+    addClasses(".header__background", "header__background_active")
   }
-}
-
-
-//Работа с dot
-let freedom = true; //переменная делает переход свободным
-let firstCheckDot = 1; //переменная для номера нынешнего дота
-let secondCheckDot = 0; //переменная для номера дота, на который выполнится переход
-let activePage;
-
-function dotsClick(button) { //получаю кнопку this так сказать
-
-if (freedom == true) { //Если процесс перехода не занят, то выполняется.
-
-  //получу активную страницу и его id
-  activePage = document.querySelector('.active-page').id
-  //Определяет сторону, в которую происходид скролл
-  firstCheckDot = document.querySelector('.dot__item_active').getAttribute('checkdot'); //Номер активного/нынешнего дота
-  secondCheckDot = button.getAttribute('checkdot'); //Получаю номер дота на который выполнится переход. Для сравнения с настоящим дотом
-  if (firstCheckDot > secondCheckDot) {
-    rightLeft = true;
-    scroll(secondCheckDot)
-  } else {
-    rightLeft = false;
-    scroll(secondCheckDot)
+  if(scrollTop < 100) {
+    removeClasses(".header__background", "header__background_active")
   }
-
-  //Меняю стили дота, меняю активную страницу
-    document.querySelector('.dot__item_active').classList.remove('dot__item_active') //если у какого-то класса active, то удаляю его
-    button.classList.add('dot__item_active') //добавляю active к нажатаму классу dot
-    freedom = false;
-    setTimeout(() => { //через - 0.5 секунд убираю active-page и добавляю
-      freedom = true;
-      document.querySelector('.active-page').classList.remove('active-page') // удаляю активный класс у page.
-      document.getElementById(`${secondCheckDot}`).classList.add('active-page') // Добавляю активный класс к странице, у который совпадает id с нажимаемым дотом
-    }, timeForScroll)
-  }
-}
-
-// Работа с тач скрином
-
-let startx = 0
-let dist = 0
-let numScroll = 0;
-let rightLeft = false;
-let nextDot;
-
-window.addEventListener('touchstart', function(e){
-        let touchobj = e.changedTouches[0] // первая точка прикосновения
-        startx = parseInt(touchobj.clientX) // положение точки касания по x, относительно левого края браузера
-        console.log('Status: touchstart ClientX: ' + startx + 'px')
-    }, false)
-  
-window.addEventListener('touchmove', function(e){
-        let touchobj = e.changedTouches[0] // первая точка прикосновения для данного события
-        let dist = parseInt(touchobj.clientX) - startx
-
-    }, false)
-window.addEventListener('touchend', function(e){
-        let touchobj = e.changedTouches[0] // первая точка прикосновения для данного события
-        let dist = parseInt(touchobj.clientX) - startx
-        console.log('Событие: touchend Координаты точки x: ' + dist + 'px')
-
-        if (dist < -40) { // определяет направление скролла. Вправо
-          numScroll += 1;
-          rightLeft = false;
-        }
-
-        if (dist > 40) { // определяет направление скролла. Влево
-          numScroll += 1;
-          rightLeft = true;
-        }
-
-        if (dist < -40 && numScroll === 1) { //скролл вправо
-
-          //ниже - переход к нужной странице. Определяет настоящий дот и следующий дот
-          nextDot = Number(document.querySelector('.dot__item_active').getAttribute('checkDot'))
-          nextDot += 1;
-          document.querySelector(`#dot-${nextDot}`).click();
-          setTimeout(() => {
-            numScroll = 0;
-          }, 2000)
-        }
-
-        if (dist > 40 && numScroll === 1) { //скролл влево
-          //ниже - переход к нужной странице. Определяет настоящий дот и следующий дот
-          nextDot = Number(document.querySelector('.dot__item_active').getAttribute('checkDot'))
-          nextDot -= 1;
-          //Очистка/определяет скролл.
-          document.querySelector(`#dot-${nextDot}`).click();
-          setTimeout(() => {
-            numScroll = 0;
-          }, 2000)
-        } 
-
-        numScroll = 0;
-
-    }, false)
+}) 
 
 // Таймер отсчёт для трансляции
 
