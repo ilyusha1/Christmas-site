@@ -101,6 +101,12 @@ body {
   color: white;
 }
 
+.link {
+  font-family: "TTCommons-ExtraBold";
+  font-size: 30px;
+  color: white;
+}
+
 .title-menu {
   font-family: "Manrope";
   font-size: 25px;
@@ -241,7 +247,7 @@ body {
     position: relative;
     width: 30px;
     height: 20px;
-    z-index: 1;
+    z-index: 100;
   }
 
   .header__slogan {
@@ -250,7 +256,9 @@ body {
     transform: translate(0%, -35%);
     left: 40px;
     font-family: "TTCommons-Bold";
-  }
+    clip-path: inset(0% 0% 0% 0%);
+    transition: all 0.2s ease;
+    }
 
   .header__burger span {
     position: absolute;
@@ -261,6 +269,7 @@ body {
     height: 4px;
     background-color: white;
     border-radius: 5px;
+    transition: all 0.2s ease;
   }
 
   .header__burger::after,
@@ -271,11 +280,12 @@ body {
     height: 4px;
     background-color: white;
     border-radius: 5px;
+    transition: all 0.2s ease;
   }
 
   .header__burger::after {
     top: 0;
-    width: 90%;
+    width: 90%; 
   }
 
   .header__burger::before {
@@ -283,14 +293,48 @@ body {
     width: 70%;
   }
 
+  .header__burger.active::after {
+    transform: rotate(45deg);
+    top: 10px;
+    width: 100%;
+    transition: all 0.2s ease; 
+  }
+
+  .header__burger.active::before {
+    transform: rotate(-45deg);
+    top: 10px;
+    width: 100%;
+    transition: all 0.2s ease; 
+  }
+
+  .header__burger.active span {
+    opacity: 0;
+    transition: all 0.2s ease; 
+  }
+
+  .header__burger.active .header__slogan {
+    clip-path: inset(0% 100% 0% 0%);
+    transition: all 0.2s ease;
+  }
+
   .header__menu {
     position: fixed;
+    padding: 80px 0 0 0;
     top: 0;
     left: 0%;
     width: 100%;
     height: 100%;
     background-color: #D1B091;
-    
+    clip-path: circle(0.0% at 0 0);
+    transition: all 0.5s ease;
+    border-color: transparent;
+    z-index: 10;
+  }
+
+  .header__menu.active {
+    clip-path: circle(140.9% at 0 0);
+    transition: all 0.5s ease;
+    border-color: transparent;
   }
 
   .header__list li {
@@ -300,6 +344,8 @@ body {
   .header__list li:last-child {
     margin-bottom: 0;
   }
+
+
 
   .home {
     width: 100%;
@@ -428,6 +474,7 @@ body {
     justify-content: space-between;
     padding: 14px 25px;
     position: relative;
+    z-index: -1;
   }
 
   .contact-table__item::before {

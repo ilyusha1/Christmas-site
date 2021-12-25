@@ -2,11 +2,16 @@
 
 //Функция для Появление
 function addClasses(element, newClass) {
-  document.querySelector(`${element}`).classList.add(`${newClass}`);
+  document.querySelector(`.${element}`).classList.add(`${newClass}`);
 }
 
 function removeClasses(element, newClass) {
-  document.querySelector(`${element}`).classList.remove(`${newClass}`);
+  document.querySelector(`.${element}`).classList.remove(`${newClass}`);
+}
+
+function toggleActiveClass(element) {
+  console.log(element)
+  document.querySelector(`.${element}`).classList.toggle("active");
 }
 
 //Обработчик отслеживает скролл
@@ -14,10 +19,10 @@ document.addEventListener('scroll', () => {
   let scrollTop = document.documentElement.scrollTop;
   console.log(scrollTop)
   if(scrollTop > 100) {
-    addClasses(".header__background", "header__background_active")
+    addClasses("header__background", "header__background_active")
   }
   if(scrollTop < 100) {
-    removeClasses(".header__background", "header__background_active")
+    removeClasses("header__background", "header__background_active")
   }
 }) 
 
