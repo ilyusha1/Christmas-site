@@ -75,10 +75,29 @@ if ($row['ip'] != "") {
 </head>
 <body>
 
-<div class="mn-burger">
-    <div class="mn-burger__button">
-        <div class="mn-burger__container">
-            <div class="mn-burger__line"></div>
+<div class="header">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__burger">
+                <span></span>
+                <p class="slogan header__slogan">МЕНЮ</p>
+            </div>
+            <div class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <a href="" class="header__link">Главная</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Записи служений</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Прямая трансляция</a>
+                    </li>
+                    <li>
+                        <a href="" class="header__link">Контакты</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -88,27 +107,27 @@ if ($row['ip'] != "") {
 
 <div class="alert-height title padding-all">Пожалуйста, переверните телефон для корректной работы сайта</div>
 
-<main class="header" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
+<main class="home" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
 
     <div class="container">
-        <div class="header__intro flex-column">
-            <h1 class="header__title title">
+        <div class="home__intro flex-column">
+            <h1 class="home__title title">
                 С ПРАЗДНИКОМ РОЖДЕСТВА
             </h1>
-            <h3 class="header__slogan slogan">
+            <h3 class="home__slogan slogan">
                 В этот день родился Иисус
             </h3>
-            <div class="header__img">
+            <div class="home__img">
                 <picture>
                     <source srcset="img/nursery.webp" type="image/webp">
                     <img src="img/nursery.webp"type="image/webp">
                 </picture>
             </div>
-            <button type="button" class="header__btn btn btn-red">Когда праздник</button>   
+            <button type="button" class="home__btn btn btn-red">Когда праздник</button>   
         </div>
     </div>
 
-    <div class="header__background-img">
+    <div class="home__background-img">
         <picture>
             <source srcset="img/sky.webp" type="image/webp">
             <img src="img/sky.png"type="image/png">

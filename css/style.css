@@ -19,10 +19,6 @@ a:focus, a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
-  display: block;
-}
-
 html, body {
   height: 100%;
   width: 100%;
@@ -144,30 +140,9 @@ body {
   display: none;
 }
 
-.header {
+.hello {
   width: 100%;
   height: fit-content;
-}
-
-/* .about {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: inset(0% 0% 0% 100%);
-          clip-path: inset(0% 0% 0% 100%);
-  transition: -webkit-clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
-  transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
-  transition: clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1), -webkit-clip-path 0.5s cubic-bezier(0.8, 0.045, 0.355, 1);
-  will-change: clip-path;
-} */
-
-.active-page {
-  -webkit-clip-path: inset(0%) !important;
-          clip-path: inset(0%) !important;
 }
 
 /*Страница статистики*/
@@ -232,85 +207,121 @@ body {
     display: none;
   }
 
-  .mn-burger {
-    display: none;
-  }
-  .mn-burger .mn-burger__button {
-    z-index: 100;
-    width: 33px;
-    height: 20px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-  }
-  .mn-burger .mn-burger__button .mn-burger__container {
-    height: 100%;
+  .header {
     width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
+    height: fit-content;
+    position: fixed;
   }
-  .mn-burger .mn-burger__button .mn-burger__container .mn-burger__line {
-    width: 100%;
-    height: 2px;
-    background: white;
-  }
-  .mn-burger .mn-burger__button .mn-burger__container:after {
+
+  .header:before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    content: "";
-    display: block;
     width: 100%;
-    height: 2px;
-    background: white;
+    height: 100%;
+    background: linear-gradient(90.86deg, rgba(255, 255, 255, 0.3) 3%, rgba(255, 255, 255, 0.3) 3.01%, rgba(255, 255, 255, 0) 103.9%);
+    backdrop-filter: blur(12px);
+    clip-path: inset(100%);
   }
-  .mn-burger .mn-burger__button .mn-burger__container:before {
+
+  @keyframes left-slide {
+    0% {clip-path: inset(0% 100% 0% 0%);}
+    100% {clip-path: inset(0% 0% 0% 0%);}
+  }
+
+  .header__body {
+    padding: 20px 0;
+  }
+
+  .header__burger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+
+  .header__slogan {
     position: absolute;
-    bottom: 0;
+    top: 50%;
+    transform: translate(0%, -35%);
+    left: 40px;
+    font-family: "TTCommons-Bold";
+  }
+
+  .header__burger span {
+    position: absolute;
+    top: 50%;
     left: 0;
+    transform: translate(0%, -50%);
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .header__burger::after,
+  .header__burger::before {
     content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: white;
+    position: absolute;
+    left: 0;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
   }
 
-  .header {
+  .header__burger::after {
+    top: 0;
+    width: 90%;
+  }
+
+  .header__burger::before {
+    bottom: 0;
+    width: 70%;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__list {
+    display: flex;
+  }
+
+  .home {
     width: 100%;
     height: 100vh;
   }
 
-  .header__intro {
+  .home__intro {
     height: 100vh;
     width: 100%;
   }
 
-  .header__title {
+  .home__title {
     text-align: center;
     margin-bottom: 15px;
   }
 
-  .header__slogan {
+  .home__slogan {
     max-width: 140px;
     text-align: center;
     margin-bottom: 30px;
   }
 
-  .header__img {
+  .home__img {
     max-width: 220px;
     margin-bottom: 40px;
   }
 
-  .header__img img {
+  .home__img img {
     width: 100%;
     object-fit: fill;
     object-position: center;
   }
 
-  .header__btn {}
+  .home__btn {}
 
-  .header__background-img {
+  .home__background-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -319,7 +330,7 @@ body {
     z-index: -1;
   }
 
-  .header__background-img img {
+  .home__background-img img {
     height: 100vh;
     width: 100%;
     object-fit: cover;
@@ -498,25 +509,25 @@ body {
 
 @media only screen and (max-height: 650px) {
 
-  .header {}
+  .home {}
 
-  .header__intro {
+  .home__intro {
 
   }
 
-  .header__title {
+  .home__title {
     margin-bottom: 15px;
   }
 
-  .header__slogan {
+  .home__slogan {
     margin-bottom: 26px;
   }
 
-  .header__img {
+  .home__img {
     margin-bottom: 0px;
   }
 
-  .header__btn {
+  .home__btn {
     display: none;
   }
 }
