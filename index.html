@@ -76,57 +76,58 @@ if ($row['ip'] != "") {
 <body>
 
 <div class="header">
-    <div class="container">
-        <div class="header__body">
-            <div class="header__burger" onclick="toggleActiveClass('header__menu'); toggleActiveClass('header__burger');">
-                <span></span>
-                <p class="slogan header__slogan">Меню</p>
-            </div>
-            <div class="header__menu">
-                <div class="container">
-                    <ul class="header__list">
-                        <li>
-                            <a href="" class="link header__link">Главная</a>
-                        </li>
-                        <li>
-                            <a href="" class="link header__link">Записи служений</a>
-                        </li>
-                        <li>
-                            <a href="" class="link header__link">Прямая трансляция</a>
-                        </li>
-                        <li>
-                            <a href="" class="link header__link">Контакты</a>
-                        </li>
-                    </ul>
+    <div class="header__content">
+        <div class="container">
+            <div class="header__body">
+                <div class="header__burger" onclick="toggleActiveClass('header__menu'); toggleActiveClass('header__burger');">
+                    <span></span>
+                    <p class="slogan header__slogan">Меню</p>
+                </div>
+                <div class="header__menu">
+                    <div class="container">
+                        <ul class="header__list">
+                            <li>
+                                <a href="" class="link header__link">Главная</a>
+                            </li>
+                            <li>
+                                <a href="" class="link header__link">Записи служений</a>
+                            </li>
+                            <li>
+                                <a href="" class="link header__link">Прямая трансляция</a>
+                            </li>
+                            <li>
+                                <a href="" class="link header__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header__background"></div>
 </div>
-
-
-<div class="vremenno title padding-all">Здравствуйте! Сайт на ПК версии временно не работает. Если возможно, то зайдите с телефона</div>
-
-<div class="alert-height title padding-all">Пожалуйста, переверните телефон для корректной работы сайта</div>
 
 <main class="home" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
 
     <div class="container">
-        <div class="home__intro flex-column">
-            <h1 class="home__title title">
-                С ПРАЗДНИКОМ РОЖДЕСТВА
-            </h1>
-            <h3 class="home__slogan slogan">
-                В этот день родился Иисус
-            </h3>
-            <div class="home__img">
-                <picture>
-                    <source srcset="img/nursery.webp" type="image/webp">
-                    <img src="img/nursery.webp"type="image/webp">
-                </picture>
+        <div class="home__intro">
+            <div class="home__item">
+                <h1 class="home__title title">
+                    С ПРАЗДНИКОМ РОЖДЕСТВА
+                </h1>
+                <h3 class="home__slogan slogan">
+                    В этот день родился Иисус
+                </h3>
+                <button type="button" class="btn-pc btn-red">Когда праздник</button>   
             </div>
+            <div class="home__item">
+                <div class="home__img">
+                    <picture>
+                        <source srcset="img/nursery.webp" type="image/webp">
+                        <img src="img/nursery.webp"type="image/webp">
+                    </picture>
+                </div>
             <button type="button" class="home__btn btn btn-red">Когда праздник</button>   
+            </div>
         </div>
     </div>
 

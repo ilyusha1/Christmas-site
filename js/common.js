@@ -19,10 +19,10 @@ document.addEventListener('scroll', () => {
   let scrollTop = document.documentElement.scrollTop;
   console.log(scrollTop)
   if(scrollTop > 100) {
-    addClasses("header__background", "header__background_active")
+    addClasses("header__content", "active")
   }
   if(scrollTop < 100) {
-    removeClasses("header__background", "header__background_active")
+    removeClasses("header__content", "active")
   }
 }) 
 
