@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Христиане Кропоткина</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <link rel="shortcut icon" href="img/favicon/chmonoa.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" href="img/favicon/apple.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple114.png">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <div class="video__list"></div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qvBX1LfoL74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+
+<script>
+    const youtubeKey = 'AIzaSyAjnFv1nOnYdcRikFKKHeuacBi33oufDn0';
+    // const youtubeUser = 'UCEggSBNcmrKZUFF8dYApWHA';
+    
+    // let getSubscribers = () => {
+
+    //     fetch(`https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&channelId=${youtubeUser}&part=snippet,id&order=date&maxResults=500`, {
+
+    //     })
+    //     .then(response => {
+    //         return response.json()
+    //     })
+    //     .then(data => {
+    //         let attributes = [
+    //             ['allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'],
+    //             ['src', 'https://www.youtube.com/embed/'],
+    //             ['allowfullscreen'],
+    //         ]
+    //         for (let i = 0; i < data.items.length; i++) {
+    //             let id = data.items[i].id.videoId 
+    //             // attributes[1][1] += `${i}`
+    //             // console.log(attributes[1][1])
+    //             createElementHTML('iframe', 'video__list', attributes, id)
+    //         }
+    //     })
+    // }
+
+    getSubscribers()
+</script>
+<script src="js/common.js"></script>

@@ -15,6 +15,7 @@ function toggleActiveClass(element) {
 }
 
 //Обработчик отслеживает скролл
+if(window.location.href === 'http://127.0.0.1:5500/') {
 document.addEventListener('scroll', () => {
   let scrollTop = document.documentElement.scrollTop;
   console.log(scrollTop)
@@ -25,6 +26,19 @@ document.addEventListener('scroll', () => {
     removeClasses("header__content", "active")
   }
 }) 
+}
+
+//Функция для создания элементов 
+
+function createElementHTML(tagName, parentClass, attributes) {
+
+  let element = document.createElement(tagName);
+  attributes.forEach(function (item, i, arr) {
+    element.setAttribute(`${arr[i][0]}`, `${arr[i][1]}`)
+  });
+  let root = document.querySelector(`.${parentClass}`)
+  root.append(element)
+}
 
 // Таймер отсчёт для трансляции
 
