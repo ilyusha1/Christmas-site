@@ -212,7 +212,7 @@ body {
     width: 100%;
     height: fit-content;
     position: fixed;
-    z-index: 100;
+    z-index: 200;
   }
 
   .header__content {
@@ -650,6 +650,64 @@ body {
 
 @media (min-width: 781px) {
 
+  .banner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 100;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .banner.active {
+    opacity: 1;
+    display: flex;
+  }
+
+  .banner__content {
+    background-color: #DD3B3B;
+    padding: 40px 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    z-index: 1;
+  }
+
+  .banner__content .subtitle {
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .banner__btn-container {
+    display: flex;
+  }
+
+  .banner__btn-container button {
+    margin-right: 10px;
+  }
+
+  .banner__btn-container button:last-child {
+    margin-right: 0px;
+    background-color: #2f3038;
+  }
+
+  .banner__btn-container button:first-child {
+    background-color: #137167;
+  }
+
+  .banner__btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: "TTCommons-Bold";
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+  }
+
   .btn-pc {
     border-radius: 31.875px;
     padding: 20px 45px;
@@ -940,7 +998,7 @@ body {
   .xmas-church {
     width: 100%;
     height: fit-content;
-    background: #DD3B3B;
+    background: #D1B091;
     padding: 90px 0px;
   }
 
@@ -951,10 +1009,13 @@ body {
   .xmas-church__intro {
     height: auto;
     width: 100%;
+    padding-bottom: 10px;
   }
 
   .xmas-church__intro .title {
     text-align: center;
     margin-bottom: 15px;
+    color: white;
   }
+
 }
