@@ -28,6 +28,16 @@ document.addEventListener('scroll', () => {
 }) 
 }
 
+// Если страница загрузилась
+
+window.onload=function(){
+  setTimeout(document.querySelector(".banner").classList.add("active"),2000)
+}
+
+function hideBanner() {
+  document.querySelector(".banner").classList.remove("active")
+}
+
 //Функция для создания элементов 
 
 function createElementHTML(tagName, parentClass, attributes) {

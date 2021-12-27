@@ -106,40 +106,47 @@ if ($row['ip'] != "") {
     </div>
 </div>
 
+<main class="banner">
+    <div class="banner__content">
+        <div class="subtitle">Вы к нам по <br>поводу Рождества?</div>
+        <div class="banner__btn-container">
+            <button onclick="document.location= 'https://hmk-life.ru/christmas/'" type="button" class="banner__btn" >Да</button>
+            </form>
+            <button type="button" class="banner__btn" onclick="hideBanner()">Нет</button>
+        </div>
+    </div>
+</main>
+
 <main class="home" check-page="1" id="1"> <!-- По id сверяю атрибут нажимаемого дота и страницу-->
 
     <div class="container">
         <div class="home__intro">
             <div class="home__item">
                 <h1 class="home__title title">
-                    С ПРАЗДНИКОМ РОЖДЕСТВА
+                    ЕХБ Церковь Кропоткина.
                 </h1>
-                <h3 class="home__slogan slogan">
-                    В этот день родился Иисус
-                </h3>
+                <h2 class="home__slogan slogan">
+                    Христиане города Кропоткина. Последователи Иисуса Христа
+                </h2>
                 <button type="button" class="btn-pc btn-red">Когда праздник</button>   
             </div>
             <div class="home__item">
                 <div class="home__img">
                     <picture>
-                        <source srcset="img/nursery.webp" type="image/webp">
-                        <img src="img/nursery.webp"type="image/webp">
+                        <source srcset="img/cross.webp" type="image/webp">
+                        <img src="img/cross.webp"type="image/webp">
                     </picture>
-                </div>
-            <button type="button" class="home__btn btn btn-red">Когда праздник</button>   
+                </div>  
             </div>
         </div>
     </div>
 
     <div class="home__background-img">
-        <picture>
-            <source srcset="img/sky.webp" type="image/webp">
-            <img src="img/sky.png"type="image/png">
-        </picture>
+
     </div>
 </main>
 
-<main class="about" check-page="2" id="2">
+<!-- <main class="about" check-page="2" id="2">
     <div class="container">
         <div class="about__intro">
             <h2 class="title">О РОЖДЕСТВЕ</h2>
@@ -227,100 +234,22 @@ if ($row['ip'] != "") {
             </div>
         </div>
     </div>
-</main>
-
-<main class="xmas-kids" check-page="3" id="3">
-    <div class="container">
-        <div class="xmas-kids__intro">
-            <div class="title">ДЕТСКИЙ ПРАЗДНИК
-                РОЖДЕСТВА</div>
-            <div class="caption">БЕСПЛАТНО</div>
-        </div>
-        <div class="contact-table">
-            <div class="contact-table__item">
-                <span class="text">Дата:</span>
-                <p class="text">6 января</p>
-            </div>
-            <div class="contact-table__item">
-                <span class="text">Время:</span>
-                <p class="text">16:00</p>
-            </div>
-            <div class="contact-table__item">
-                <span class="text">Адрес:</span>
-                <p class="text">ул. Зелёная 3</p>
-            </div>
-        </div>
-        <div class="description">
-            <p class="text description__text">
-                В программу детского праздника входит: театральная постановка, 
-                конкурсы, игры. Детей ждут рождественские подарки! 
-                На этом празднике будут рады каждому!
-            </p>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-6.webp">
-                </picture>
-            </div>
-            <p class="text description__text">
-                Вход на это мероприятие, 
-                театральная постановка, подарки,
-                Все что будет на этом празднике
-                Абсолютно бесплатно.
-                <br>
-                <br>
-                По всем вопросам звонить: <br>Олег Бондаренко:  +7 988 248-30-10.
-            </p>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-5.webp">
-                </picture>
-            </div>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-3.webp">
-                </picture>
-            </div>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-4.webp">
-                </picture>
-            </div>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-1.webp">
-                </picture>
-            </div>
-            <div class="img-dash">
-                <picture>
-                    <source srcset="" type="image/webp">
-                    <img src="img/img-2.webp">
-                </picture>
-            </div>
-        </div>
-    </div>
-</main>
+</main> -->
 
 <main class="xmas-church" check-page="4" id="4">
     <div class="container">
         <div class="xmas-church__intro">
-            <div class="title">БОГОСЛУЖЕНИЕ 
-                ПОСВЯЩЕННОЕ 
-                РОЖДЕСТВУ</div>
-            <div class="caption">БЕСПЛАТНО</div>
+            <div class="title">Воскресное богослужение</div>
+            <div class="caption">Каждое воскресение</div>
         </div>
         <div class="contact-table">
             <div class="contact-table__item">
-                <span class="text">Дата:</span>
-                <p class="text">7 января</p>
+                <span class="text">Утреннее:</span>
+                <p class="text">10:00-12:00</p>
             </div>
             <div class="contact-table__item">
-                <span class="text">Время:</span>
-                <p class="text">10:00</p>
+                <span class="text">Вечернее:</span>
+                <p class="text">18:00-19:30</p>
             </div>
             <div class="contact-table__item">
                 <span class="text">Адрес:</span>
@@ -333,12 +262,27 @@ if ($row['ip'] != "") {
                 <img src="img/img-7.webp">
             </picture>
         </div>
+        <div class="img-dash">
+            <picture>
+                <source srcset="" type="image/webp">
+                <img src="img/img-3.webp">
+            </picture>
+        </div>
+        <div class="img-dash">
+            <picture>
+                <source srcset="" type="image/webp">
+                <img src="img/img-2.webp">
+            </picture>
+        </div>
+        <div class="img-dash">
+            <picture>
+                <source srcset="" type="image/webp">
+                <img src="img/img-1.webp">
+            </picture>
+        </div>
         <div class="description">
             <p class="text description__text">
-                Рождественское богослужение проводится для того, 
-                чтобы можно было побольше узнать о рождестве, 
-                получить ответы на свои вопросы, порадоваться 
-                рождению Иисуса Христа вместе с нами!
+                Каждое воскресение мы собираемся вместе чтобы послушать Божье слово, общаемся и прославляем Бога песнями.
                 <br>
                 <br>                
                 По всем вопросам звонить:<br>Олег Бондаренко:  +7 988 248-30-10.
